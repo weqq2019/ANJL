@@ -1,0 +1,18 @@
+//史上最难强迫症游戏2第二关
+Dim intX,intY
+While True
+    FindMultiColor 1,900,449,1296,"FFFFFF-101010","13|0|FFFFFF-101010,0|-24|FFFFFF-101010",0,0.9,intX,intY
+    If intX > -1 And intY > -1 Then
+        TracePrint intX
+        TracePrint intY
+        Traceprint "找到L"
+        Tap 1487, 700
+        Delay 50
+    Else
+        Traceprint "找到R"
+        TracePrint intX
+        TracePrint intY
+        Tap 1455, 233
+        Delay 50
+    End If	
+Wend

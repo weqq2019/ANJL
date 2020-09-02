@@ -1,0 +1,94 @@
+//第一种
+//
+//Dim intX1,intY1
+//Dim intX2,intY2
+//
+//While True
+//
+//    FindPic 565, 24, 1037, 291, "Attachment:娟推荐的.png", "000000", 0, 0.9, intX1, intY1
+//    FindPic 578, 593, 1017, 879, "Attachment:娟推荐的左.png", "000000", 0, 0.9, intX2, intY2
+//    
+//    If intX1 > -1 And intY1 > -1  Then 
+//        TracePrint intX1 ,intY1
+//        TracePrint "点点点左左左左左左",intY1
+//
+//        If intY1 < 120 Then 
+//            TracePrint "双点左"
+//            Tap 1458, 680
+//            Tap 1458, 680
+//            Delay 1000
+//        Elseif intY1 > 120
+//            Tap 1458, 680
+//            Delay 350
+//        Else
+//        End If
+//
+//    ElseIf intX2 > -1 And intY2 > -1  Then
+//        TracePrint intX2,intY2
+//        TracePrint "点点点右右右右右右右",intY2
+//        If intY2 > 600 Then 
+//            TracePrint "双点右"
+//            Tap 1449, 253
+//
+//            Tap 1449, 253
+//            Delay 1000
+//        Elseif intY2 < 600
+//            Tap 1449, 253
+//            Delay 350
+//        Else
+//        End If
+//    Else 
+//    End If
+//       
+//Wend
+//
+
+Dim intX,intY,中间x,中间y
+中间x = 757
+中间y = 450
+
+While True
+
+    //找到了鼻子
+    //第一种 找图
+    FindPic 648,162,920,695,"Attachment:鼻子.png","000000",0,0.8,intX,intY 
+
+
+    //    FindMultiColor 648,162,920,695,"697DBE","-1|29|586AA8,-6|10|394982,-5|33|95A9F6,-9|-5|95A9F6,7|15|A2B6FA,-18|13|9BAFF7,-7|37|95A9F6,-9|-11|99AEF7,-7|34|969CFA",0,0.9,intX,intY
+    //
+    If intX > -1 And intY > -1 Then 
+        TracePrint "找到鼻子"
+        
+        //鼻子的坐标减去中间的坐标成 它所偏移的像素
+        If intY < 中间y - (intY - 中间y) - 125 Then 
+            If inty <200 Then 
+                TracePrint "往右偏,鼠标双点<<<<<<<",inty
+                Tap 1458, 680
+                Delay 400
+                Tap 1458, 680
+                Delay 400
+            Else 
+                TracePrint "往右偏,鼠标单点<<<<<<<",inty
+                Tap 1458, 680
+                Delay 400
+            End If
+
+            //鼻子的坐标减去中间的坐标成 它所偏移的像素	
+        ElseIf intY > 中间y - (intY - 中间y) + 20 Then
+            If inty >550
+                TracePrint "往左偏,鼠标双点》》》》》》》",inty
+                Tap 1449, 253
+                Delay 400
+                Tap 1449, 253
+                Delay 400
+            Else 
+                TracePrint "往左偏,鼠标单点>>>>>>>>>>>",inty
+                Tap 1449, 253
+                Delay 400
+            End If
+        
+        End If
+    End If
+    
+    
+Wend

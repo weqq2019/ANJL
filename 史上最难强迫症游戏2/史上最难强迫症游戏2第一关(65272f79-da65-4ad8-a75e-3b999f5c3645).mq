@@ -1,0 +1,9 @@
+//史上最难强迫症游戏2第一关
+While True
+    Tap 1471, 756
+    Delay 50
+    Tap 1433, 456
+    Delay 50
+    Tap 1466, 140
+    Delay 50
+Wend
